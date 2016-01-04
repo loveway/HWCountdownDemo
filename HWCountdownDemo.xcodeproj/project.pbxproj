@@ -15,6 +15,7 @@
 		926177021C3A9C1A00E870BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 926177001C3A9C1A00E870BC /* LaunchScreen.storyboard */; };
 		9261770D1C3A9C1A00E870BC /* HWCountdownDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9261770C1C3A9C1A00E870BC /* HWCountdownDemoTests.m */; };
 		926177181C3A9C1A00E870BC /* HWCountdownDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 926177171C3A9C1A00E870BC /* HWCountdownDemoUITests.m */; };
+		9261772B1C3A9C8E00E870BC /* UIButton+countDown.m in Sources */ = {isa = PBXBuildFile; fileRef = 9261772A1C3A9C8E00E870BC /* UIButton+countDown.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		926177131C3A9C1A00E870BC /* HWCountdownDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HWCountdownDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		926177171C3A9C1A00E870BC /* HWCountdownDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HWCountdownDemoUITests.m; sourceTree = "<group>"; };
 		926177191C3A9C1A00E870BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		926177291C3A9C8E00E870BC /* UIButton+countDown.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+countDown.h"; sourceTree = "<group>"; };
+		9261772A1C3A9C8E00E870BC /* UIButton+countDown.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+countDown.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		926176F11C3A9C1A00E870BC /* HWCountdownDemo */ = {
 			isa = PBXGroup;
 			children = (
+				926177281C3A9C8E00E870BC /* UIButton+Category */,
 				926176F51C3A9C1A00E870BC /* AppDelegate.h */,
 				926176F61C3A9C1A00E870BC /* AppDelegate.m */,
 				926176F81C3A9C1A00E870BC /* ViewController.h */,
@@ -138,6 +142,15 @@
 				926177191C3A9C1A00E870BC /* Info.plist */,
 			);
 			path = HWCountdownDemoUITests;
+			sourceTree = "<group>";
+		};
+		926177281C3A9C8E00E870BC /* UIButton+Category */ = {
+			isa = PBXGroup;
+			children = (
+				926177291C3A9C8E00E870BC /* UIButton+countDown.h */,
+				9261772A1C3A9C8E00E870BC /* UIButton+countDown.m */,
+			);
+			path = "UIButton+Category";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				926176FA1C3A9C1A00E870BC /* ViewController.m in Sources */,
+				9261772B1C3A9C8E00E870BC /* UIButton+countDown.m in Sources */,
 				926176F71C3A9C1A00E870BC /* AppDelegate.m in Sources */,
 				926176F41C3A9C1A00E870BC /* main.m in Sources */,
 			);
