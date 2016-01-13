@@ -12,6 +12,7 @@
 
 - (void)startWithTime:(NSInteger)timeLine title:(NSString *)title countDownTitle:(NSString *)subTitle mainColor:(UIColor *)mColor countColor:(UIColor *)color {
     
+    __weak typeof(self) weakSelf = self;
     //倒计时时间
     __block NSInteger timeOut = timeLine;
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
@@ -24,17 +25,18 @@
         if (timeOut <= 0) {
             dispatch_source_cancel(_timer);
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.backgroundColor = mColor;
-                [self setTitle:title forState:UIControlStateNormal];
-                self.userInteractionEnabled = YES;
+                weakSelf.backgroundColor = mColor;
+                [weakSelf setTitle:title forState:UIControlStateNormal];
+                weakSelf.userInteractionEnabled = YES;
             });
         } else {
-            int seconds = timeOut % 60;
+            int allTime = (int)timeLine + 1;
+            int seconds = timeOut % allTime;
             NSString *timeStr = [NSString stringWithFormat:@"%0.2d", seconds];
             dispatch_async(dispatch_get_main_queue(), ^{
-                self.backgroundColor = color;
-                [self setTitle:[NSString stringWithFormat:@"%@%@",timeStr,subTitle] forState:UIControlStateNormal];
-                self.userInteractionEnabled = NO;
+                weakSelf.backgroundColor = color;
+                [weakSelf setTitle:[NSString stringWithFormat:@"%@%@",timeStr,subTitle] forState:UIControlStateNormal];
+                weakSelf.userInteractionEnabled = NO;
             });
             timeOut--;
         }
