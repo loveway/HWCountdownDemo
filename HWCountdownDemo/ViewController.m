@@ -22,7 +22,9 @@
 
 }
 - (IBAction)countdownBtnClick:(UIButton *)sender {
-    [_countdownBtn startWithTime:5 title:@"获取验证码" countDownTitle:@"s" mainColor:[UIColor colorWithRed:84/255.0 green:180/255.0 blue:98/255.0 alpha:1.0f] countColor:[UIColor lightGrayColor]];
+    [_countdownBtn startWithTime:5 title:@"获取验证码" mainColor:[UIColor colorWithRed:84/255.0 green:180/255.0 blue:98/255.0 alpha:1.0f] countColor:[UIColor lightGrayColor] block:^(NSInteger time) {
+        
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
